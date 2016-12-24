@@ -5,13 +5,18 @@ var responseData = require('../../data/response-data');
 
 var responseHandler = function(req, res, next) {
   res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify(responseData, null, 3));
+  res.send(JSON.stringify(responseData));
 };
 
 
 router.get('/', function(req, res, next) {
   res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify(responseData, null, 3));
+  res.send(JSON.stringify(responseData));
+});
+
+router.post('/', function(req, res, next) {
+  res.setHeader('Content-Type', 'application/json');
+  res.send(JSON.stringify(responseData));
 });
 
 router.get('/content/:id1/data1/:id2', responseHandler);
