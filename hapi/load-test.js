@@ -4,6 +4,10 @@ const responseHandler = function (request, reply) {
   return reply(JSON.stringify(responseData));
 }
 
+const responseHandler2 = function (request, reply) {
+  return reply(JSON.stringify(request.payload));
+}
+
 exports.register = function (server, options, next) {
   server.route({ method: 'GET', path:'/content/{id1}/data1/{id2}', handler: responseHandler });
   server.route({ method: 'GET', path:'/content/{id1}/data2/{id2}', handler: responseHandler });
@@ -15,50 +19,19 @@ exports.register = function (server, options, next) {
   server.route({ method: 'GET', path:'/content/{id1}/data8/{id2}', handler: responseHandler });
   server.route({ method: 'GET', path:'/content/{id1}/data9/{id2}', handler: responseHandler });
   server.route({ method: 'GET', path:'/content/{id1}/data10/{id2}', handler: responseHandler });
-  
-  server.route({ method: 'GET', path:'/content/{id1}/data11/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data12/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data13/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data14/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data15/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data16/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data17/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data18/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data19/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data20/{id2}', handler: responseHandler });
 
-  server.route({ method: 'GET', path:'/content/{id1}/data21/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data22/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data23/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data24/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data25/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data26/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data27/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data28/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data29/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data30/{id2}', handler: responseHandler });
 
-  server.route({ method: 'GET', path:'/content/{id1}/data31/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data32/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data33/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data34/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data35/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data36/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data37/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data38/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data39/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data40/{id2}', handler: responseHandler });
+  server.route({ method: 'POST', path:'/post/{id1}/something1/{id2}', handler: responseHandler2 });
+  server.route({ method: 'POST', path:'/post/{id1}/something2/{id2}', handler: responseHandler2 });
+  server.route({ method: 'POST', path:'/post/{id1}/something3/{id2}', handler: responseHandler2 });
+  server.route({ method: 'POST', path:'/post/{id1}/something4/{id2}', handler: responseHandler2 });
+  server.route({ method: 'POST', path:'/post/{id1}/something5/{id2}', handler: responseHandler2 });
+  server.route({ method: 'POST', path:'/post/{id1}/something6/{id2}', handler: responseHandler2 });
+  server.route({ method: 'POST', path:'/post/{id1}/something7/{id2}', handler: responseHandler2 });
+  server.route({ method: 'POST', path:'/post/{id1}/something8/{id2}', handler: responseHandler2 });
+  server.route({ method: 'POST', path:'/post/{id1}/something9/{id2}', handler: responseHandler2 });
+  server.route({ method: 'POST', path:'/post/{id1}/something10/{id2}', handler: responseHandler2 });
 
-  server.route({ method: 'GET', path:'/content/{id1}/data41/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data42/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data43/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data44/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data45/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data46/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data47/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data48/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data49/{id2}', handler: responseHandler });
-  server.route({ method: 'GET', path:'/content/{id1}/data50/{id2}', handler: responseHandler });
   next();
 };
 

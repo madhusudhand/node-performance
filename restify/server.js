@@ -7,6 +7,9 @@ function respond(req, res, next) {
 }
 
 var server = restify.createServer();
+
+server.use(restify.bodyParser({ mapParams: false }));
+
 server.get('/hello/:name', respond);
 server.head('/hello/:name', respond);
 
