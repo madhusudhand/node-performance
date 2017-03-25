@@ -1,0 +1,18 @@
+{
+  "name": "app",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "readme": "README.md",
+  "keywords": [
+    "donode",
+    "node.js"
+  ],
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "donode": "1.0.0-beta.3"
+  },
+  "devDependencies": {}
+}
