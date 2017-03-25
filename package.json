@@ -4,6 +4,7 @@
   "description": "Performance results of different node frameworks.",
   "main": "index.js",
   "scripts": {
+    "donode": "node donode/app.js",
     "express": "node express/server.js",
     "restify": "node restify/server.js",
     "hapi": "node hapi/server.js"
@@ -16,6 +17,7 @@
     "restify",
     "express",
     "hapi",
+    "donode",
     "performance"
   ],
   "author": "Madhusudhana Rao Dollu",
