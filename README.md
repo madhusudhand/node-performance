@@ -2,38 +2,41 @@
 
 In this repo, I've run a round of tests for different node frameworks.
 
-### Test conditions
-
-Total number of requests sent: **10,000**, Concurrency: **20 requests**
-
-For each framework 10 routes with route params were defined to test the average case scenario.
-
-
-### Result summary
+## Results
 
 | Rank | Framework | Version      | Req. served Per Sec. |
 | ---- | --------- | ------------ | -------------------- |
 | #1   | donode    | 1.0.0-beta.3 | 1200 - 1300          |
-| #2   | restify   | 4.3.0        | 900  - 1150          |
-| #3   | express   | 4.14.1       | 900  - 1200          |
+| #2   | express   | 4.14.1       | 900  - 1200          |
+| #3   | restify   | 4.3.0        | 900  - 1150          |
 | #4   | hapi      | 16.1.0       | 350  - 500           |
 
-Out of the listed frameworks results are quite near for all except **hapi**. hapi seems to be cleary out of race in all perspectives.
+Out of the listed frameworks results are quite near for all except for **hapi**.
 
-**GET:** donode, restify and express; all are serving around **1200** requests per second. The new framework **donode** looks slightly more performant out of all.
+hapi seems to be damn slower and clearly out of race.
 
-**POST:** restify and express POST requests are not as performant as GET requests. they are serving about **1000** requests per sercond. Where as the new framework **donode** performing almost equal to GET request at a rate of **1200**.
+**GET:** 
 
-#### donode wins !!!
+express and restify are serving around **1200** requests per second. 
 
-This framework is performing better than all other and code also looks much organized.
-But, its in **beta** and more changes yet to come !!!
+Whereas *donode* is slightly higher and is **1250+** requests per second.
+
+**POST:** 
+
+restify and express *POST* requests are not as performant as their *GET* requests. They are slightly slower and are about **1000** requests per sercond.
+
+Whereas **donode** performing almost equal to its *GET* requests at a rate about **1200** requests per second.
+
+#### donode wins !!
+
+This framework is performing better than all in all categories and also code looks pretty much organized.
+But its a **new framework** and currently in **beta** version.
 
 ### Detailed results
 
 I've broken the results down and by request type have included requests served per sec and mean latency.
 
-Two tests performed per request type here are the observed results.
+Note:- Two tests performed per request type here are the observed results.
 
 | Framework | Request type | Req. served Per Sec. | Mean Latency |
 | --------- | ------------ | -------------------- | ------------ |
@@ -54,9 +57,23 @@ Two tests performed per request type here are the observed results.
 |           | POST         | 349                  | 57.1 ms      |
 |           |              | 389                  | 51.3 ms      |
 
+#### Test conditions
 
 
-## Running the tests
+| Condition               | Values/Comments |
+| ----------------------- | --------------- |
+| Number of requests sent | 10,000          |
+| Concurrency             | 20 requests     |
+| Routes                  | 10 different routes with route params |
+| Computer Config         |                 |
+|   - OS                  | Mac 10.12.3     |
+|   - RAM                 | 16 GB           |
+|   - Processor           | 2.5 GHz Intel Core i5 |
+| Node version            | 6.9             |
+
+
+
+## Running Tests
 
 1. clone this repo
 2. npm install (run another "npm install" inside donode directory)
@@ -76,3 +93,5 @@ loadtest -n 10000 -c 20 http://localhost:3000/loadtest/get/10/data10/20
 ```sh
 loadtest -n 10000 -c 20 -m POST -T application/json -P '{"key": "value"}' http://localhost:3000/loadtest/post/1/data10/2
 ```
+
+> TODO: Test execution needs to be simplified.
