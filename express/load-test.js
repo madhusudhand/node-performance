@@ -8,6 +8,7 @@ var responseHandler = function(req, res, next) {
 
 
 router.get('/', function(req, res, next) {
+  console.log(req.hostname);
   res.setHeader('Content-Type', 'application/json');
   res.send({ data: 'performance test!!' });
 });

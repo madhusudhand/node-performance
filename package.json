@@ -7,6 +7,7 @@
     "donode": "node donode/app.js",
     "express": "node express/server.js",
     "restify": "node restify/server.js",
+    "koa": "node koa/server.js",
     "hapi": "node hapi/server.js"
   },
   "repository": {
@@ -27,9 +28,14 @@
   },
   "homepage": "https://github.com/madhusudhand/node-performance#readme",
   "dependencies": {
+    "app": "file:donode",
     "body-parser": "^1.15.2",
     "express": "~4.14.0",
     "hapi": "^16.0.2",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-route": "^3.2.0",
+    "koa-router": "^5.4.0",
     "restify": "^4.3.0"
   }
 }
